@@ -1,0 +1,95 @@
+.prerequisitesSection {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, 
+    var(--ifm-background-color) 0%, 
+    rgba(245, 158, 11, 0.03) 50%,
+    var(--ifm-background-color) 100%);
+  position: relative;
+}
+
+.prerequisitesSection h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #F59E0B, #EF4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prerequisiteItem {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 1rem;
+  border-left: 4px solid var(--ifm-color-primary);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInLeft 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.prerequisiteItem:nth-child(1) { animation-delay: 0.1s; }
+.prerequisiteItem:nth-child(2) { animation-delay: 0.2s; }
+.prerequisiteItem:nth-child(3) { animation-delay: 0.3s; }
+.prerequisiteItem:nth-child(4) { animation-delay: 0.4s; }
+
+.prerequisiteItem:hover {
+  transform: translateX(8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-left-color: var(--ifm-color-primary-light);
+}
+
+.prerequisiteItem h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prerequisiteItem p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media screen and (max-width: 996px) {
+  .prerequisitesSection {
+    padding: 3rem 0;
+  }
+  
+  .prerequisitesSection h2 {
+    font-size: 2rem;
+  }
+  
+  .prerequisiteItem {
+    padding: 1.25rem;
+  }
+}

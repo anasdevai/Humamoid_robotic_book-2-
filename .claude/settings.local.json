@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(ls:*)",
+      "Bash(pwsh -Command:*)",
+      "Bash(git checkout:*)",
+      "Bash(npx create-docusaurus@latest:*)",
+      "Bash(npm install @docusaurus/theme-mermaid)",
+      "Bash(npm run build)",
+      "Bash(npm start)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Complete Phase 1 - Docusaurus setup and initial content structure\n\nThis commit finalizes Phase 1 of the Physical AI book project. It includes:\n- Initializing the Docusaurus project.\n- Configuring `docusaurus.config.ts` and `sidebars.ts`.\n- Creating the complete directory structure for all modules and chapters.\n- Building the landing page with React components (ModuleCards, LearningPath, WhatYoullBuild, Prerequisites, HardwareQuickStart).\n- Setting up the GitHub Actions deployment workflow.\n- Implementing module-specific color coding in `custom.css` and `ModuleCards`.\n- Addressing custom admonition configuration and styling.\n- Optimizing images via `@docusaurus/plugin-ideal-image` setup.\n- Populating all 60 chapters with detailed summaries, learning objectives, prerequisites, key concepts, tools & technologies, and assessment sections.\n\nPhase 1 establishes the foundational structure and initial content for the book, ready for detailed content filling in subsequent phases.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1:*)",
+      "Bash(powershell:*)",
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(powershell.exe -File:*)",
+      "SlashCommand(/sp.implement)",
+      "Bash(git rev-parse:*)",
+      "Bash(npm install)",
+      "Bash(rm:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

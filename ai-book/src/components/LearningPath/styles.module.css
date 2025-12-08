@@ -1,0 +1,60 @@
+.learningPathSection {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, 
+    var(--ifm-background-color) 0%, 
+    rgba(139, 92, 246, 0.03) 50%,
+    var(--ifm-background-color) 100%);
+  position: relative;
+}
+
+.learningPathSection h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #7c3aed, #00d9ff, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learningPathSection :global(.mermaid) {
+  background: var(--ifm-background-surface-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: scaleIn 0.8s ease-out 0.3s both;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .learningPathSection {
+    padding: 3rem 0;
+  }
+  
+  .learningPathSection h2 {
+    font-size: 2rem;
+  }
+}

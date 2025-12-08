@@ -1,0 +1,87 @@
+/**
+ * AI & Robotics Premium Theme Enhancement
+ * Electric blues, cyans, and purples for cutting-edge tech feel
+ */
+
+:root {
+  /* AI/Robotics Color Palette */
+  --ai-electric-blue: #00a8ff;
+  --ai-cyber-cyan: #00d9ff;
+  --ai-neon-purple: #7c3aed;
+  --ai-plasma-pink: #ec4899;
+  --ai-circuit-orange: #f97316;
+  --ai-matrix-green: #10b981;
+  
+  /* Gradients */
+  --ai-gradient-primary: linear-gradient(135deg, #00a8ff 0%, #0075b3 100%);
+  --ai-gradient-accent: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+  --ai-gradient-cyber: linear-gradient(135deg, #00d9ff 0%, #00f0ff 100%);
+  --ai-gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  
+  /* Override Docusaurus primary colors */
+  --ifm-color-primary: #00a8ff;
+  --ifm-color-primary-dark: #0097e6;
+  --ifm-color-primary-darker: #008fd9;
+  --ifm-color-primary-darkest: #0075b3;
+  --ifm-color-primary-light: #1ab9ff;
+  --ifm-color-primary-lighter: #2dc1ff;
+  --ifm-color-primary-lightest: #54ccff;
+}
+
+[data-theme='dark'] {
+  --ai-electric-blue: #00d9ff;
+  --ai-cyber-cyan: #00f0ff;
+  --ai-neon-purple: #a78bfa;
+  --ai-plasma-pink: #f472b6;
+  --ai-circuit-orange: #fb923c;
+  --ai-matrix-green: #34d399;
+  
+  --ifm-color-primary: #00d9ff;
+  --ifm-color-primary-dark: #00c4e6;
+  --ifm-color-primary-darker: #00b8d9;
+  --ifm-color-primary-darkest: #0097b3;
+  --ifm-color-primary-light: #1ae0ff;
+  --ifm-color-primary-lighter: #33e5ff;
+  --ifm-color-primary-lightest: #5cebff;
+  
+  --ifm-background-color: #0a0e1a;
+  --ifm-navbar-background-color: #0f1419;
+}
+
+/* Glowing effects for AI theme */
+.ai-glow {
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+  }
+}
+
+/* Circuit board pattern background */
+.circuit-bg {
+  background-image: 
+    linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Holographic gradient text */
+.holo-text {
+  background: linear-gradient(135deg, #00d9ff, #7c3aed, #ec4899, #00d9ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holo-shift 4s ease infinite;
+}
+
+@keyframes holo-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}

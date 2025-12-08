@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+
+# Docusaurus build output
+.docusaurus/
+build/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Source maps
+*.map
+
+# Test and development files
+*.test.js
+*.spec.js
+__tests__/
+coverage/
+
+# Documentation and configuration files not needed in published package
+*.md
+*.yml
+*.json (except package.json)
+tsconfig.json
+webpack.config.js

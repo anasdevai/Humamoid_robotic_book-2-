@@ -1,0 +1,123 @@
+.hardwareQuickStartSection {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, 
+    var(--ifm-background-color) 0%, 
+    rgba(99, 102, 241, 0.03) 50%,
+    var(--ifm-background-color) 100%);
+  position: relative;
+}
+
+.hardwareQuickStartSection h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #00a8ff, #7c3aed, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hardwareOptionItem {
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 2rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  animation: scaleIn 0.6s ease-out;
+  animation-fill-mode: both;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hardwareOptionItem:nth-child(1) { animation-delay: 0.1s; }
+.hardwareOptionItem:nth-child(2) { animation-delay: 0.2s; }
+.hardwareOptionItem:nth-child(3) { animation-delay: 0.3s; }
+
+.hardwareOptionItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--ifm-color-primary), 
+    var(--module-color-module-2-digital-twin));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.hardwareOptionItem:hover::before {
+  transform: scaleX(1);
+}
+
+.hardwareOptionItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary-lighter);
+}
+
+.hardwareOptionItem h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hardwareOptionItem .cost {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--module-color-module-1-ros2);
+  margin-bottom: 1rem;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 2rem;
+}
+
+.hardwareOptionItem p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media screen and (max-width: 996px) {
+  .hardwareQuickStartSection {
+    padding: 3rem 0;
+  }
+  
+  .hardwareQuickStartSection h2 {
+    font-size: 2rem;
+  }
+  
+  .hardwareOptionItem {
+    padding: 1.5rem;
+  }
+}
