@@ -1,23 +1,24 @@
 /**
  * AI & Robotics Premium Theme Enhancement
- * Electric blues, cyans, and purples for cutting-edge tech feel
+ * Electric blues, cyans, and purples for cutting-edge tech feel with premium effects
  */
 
 :root {
-  /* AI/Robotics Color Palette */
+  /* AI/Robotics Color Palette - Enhanced */
   --ai-electric-blue: #00a8ff;
   --ai-cyber-cyan: #00d9ff;
   --ai-neon-purple: #7c3aed;
   --ai-plasma-pink: #ec4899;
   --ai-circuit-orange: #f97316;
   --ai-matrix-green: #10b981;
-  
-  /* Gradients */
-  --ai-gradient-primary: linear-gradient(135deg, #00a8ff 0%, #0075b3 100%);
-  --ai-gradient-accent: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
-  --ai-gradient-cyber: linear-gradient(135deg, #00d9ff 0%, #00f0ff 100%);
-  --ai-gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-  
+
+  /* Premium Gradients */
+  --ai-gradient-primary: linear-gradient(135deg, #00a8ff 0%, #0072ff 50%, #0075b3 100%);
+  --ai-gradient-accent: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%);
+  --ai-gradient-cyber: linear-gradient(135deg, #00d9ff 0%, #00f0ff 50%, #80ffff 100%);
+  --ai-gradient-hero: linear-gradient(135deg, #0a0e1a 0%, #1e293b 50%, #0f172a 100%);
+  --ai-gradient-holographic: linear-gradient(135deg, #00d9ff 0%, #7c3aed 25%, #ec4899 50%, #f97316 75%, #00d9ff 100%);
+
   /* Override Docusaurus primary colors */
   --ifm-color-primary: #00a8ff;
   --ifm-color-primary-dark: #0097e6;
@@ -35,7 +36,7 @@
   --ai-plasma-pink: #f472b6;
   --ai-circuit-orange: #fb923c;
   --ai-matrix-green: #34d399;
-  
+
   --ifm-color-primary: #00d9ff;
   --ifm-color-primary-dark: #00c4e6;
   --ifm-color-primary-darker: #00b8d9;
@@ -43,45 +44,335 @@
   --ifm-color-primary-light: #1ae0ff;
   --ifm-color-primary-lighter: #33e5ff;
   --ifm-color-primary-lightest: #5cebff;
-  
+
   --ifm-background-color: #0a0e1a;
   --ifm-navbar-background-color: #0f1419;
 }
 
-/* Glowing effects for AI theme */
+/* ============================================
+   ADVANCED GLOW EFFECTS
+   ============================================ */
 .ai-glow {
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-  animation: pulse-glow 2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.4),
+    0 0 40px rgba(0, 217, 255, 0.2);
+  animation: pulse-glow-advanced 3s ease-in-out infinite;
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+@keyframes pulse-glow-advanced {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4),
+      0 0 40px rgba(0, 217, 255, 0.2);
+    filter: brightness(1);
   }
+
   50% {
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.6);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.6),
+      0 0 60px rgba(0, 217, 255, 0.4),
+      0 0 80px rgba(124, 58, 237, 0.2);
+    filter: brightness(1.1);
   }
 }
 
-/* Circuit board pattern background */
-.circuit-bg {
-  background-image: 
-    linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 1px);
-  background-size: 20px 20px;
+.ai-neon-glow {
+  box-shadow: 0 0 10px var(--ai-cyber-cyan),
+    0 0 20px var(--ai-cyber-cyan),
+    0 0 30px var(--ai-neon-purple);
+  animation: neon-flicker 4s ease-in-out infinite;
 }
 
-/* Holographic gradient text */
+@keyframes neon-flicker {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  45%,
+  55% {
+    opacity: 0.95;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* ============================================
+   CIRCUIT BOARD PATTERNS
+   ============================================ */
+.circuit-bg {
+  position: relative;
+  background-image:
+    linear-gradient(90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.circuit-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 60px,
+      rgba(0, 217, 255, 0.1) 60px,
+      rgba(0, 217, 255, 0.1) 61px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 60px,
+      rgba(124, 58, 237, 0.08) 60px,
+      rgba(124, 58, 237, 0.08) 61px);
+  pointer-events: none;
+}
+
+/* Animated circuit lines */
+.circuit-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.circuit-animated::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--ai-cyber-cyan) 50%,
+      transparent 100%);
+  animation: circuit-flow 3s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes circuit-flow {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* ============================================
+   HOLOGRAPHIC EFFECTS
+   ============================================ */
 .holo-text {
-  background: linear-gradient(135deg, #00d9ff, #7c3aed, #ec4899, #00d9ff);
+  background: var(--ai-gradient-holographic);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: holo-shift 4s ease infinite;
+  animation: holo-shift 6s ease infinite;
+  position: relative;
 }
 
 @keyframes holo-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(45deg);
+  }
+}
+
+.holo-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.holo-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      rgba(0, 217, 255, 0.2) 90deg,
+      rgba(124, 58, 237, 0.2) 180deg,
+      rgba(236, 72, 153, 0.2) 270deg,
+      transparent 360deg);
+  animation: holo-rotate 6s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes holo-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   ELECTRIC PULSE EFFECTS
+   ============================================ */
+.electric-pulse {
+  position: relative;
+  animation: electric-beat 2s ease-in-out infinite;
+}
+
+@keyframes electric-beat {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 217, 255, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.8),
+      0 0 30px rgba(0, 217, 255, 0.4);
+  }
+}
+
+.electric-line {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--ai-cyber-cyan) 50%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: electric-flow 2s linear infinite;
+}
+
+@keyframes electric-flow {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ============================================
+   MATRIX-STYLE ACCENTS
+   ============================================ */
+.matrix-code {
+  background: rgba(16, 185, 129, 0.05);
+  border-left: 3px solid var(--ai-matrix-green);
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-code::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+      rgba(16, 185, 129, 0.1) 0%,
+      transparent 100%);
+  animation: matrix-scan 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes matrix-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* ============================================
+   CYBERPUNK ACCENTS
+   ============================================ */
+.cyber-border {
+  position: relative;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--ifm-background-color), var(--ifm-background-color)) padding-box,
+    var(--ai-gradient-holographic) border-box;
+  border-radius: 0.75rem;
+}
+
+.cyber-glitch {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+
+  92% {
+    transform: translate(-2px, 2px);
+  }
+
+  94% {
+    transform: translate(2px, -2px);
+  }
+
+  96% {
+    transform: translate(-2px, -2px);
+  }
+
+  98% {
+    transform: translate(2px, 2px);
+  }
+}
+
+/* ============================================
+   ADVANCED SHINE EFFECT
+   ============================================ */
+.tech-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%);
+  transform: translateX(-100%);
+  animation: tech-shine-move 8s ease infinite;
+}
+
+@keyframes tech-shine-move {
+
+  0%,
+  10% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
 }

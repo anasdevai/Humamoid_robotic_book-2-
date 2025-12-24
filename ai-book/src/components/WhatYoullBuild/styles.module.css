@@ -1,9 +1,9 @@
 .whatYoullBuildSection {
   padding: 5rem 0;
-  background: linear-gradient(180deg, 
-    var(--ifm-background-color) 0%, 
-    rgba(6, 182, 212, 0.03) 50%,
-    var(--ifm-background-color) 100%);
+  background: linear-gradient(180deg,
+      var(--ifm-background-color) 0%,
+      rgba(6, 182, 212, 0.03) 50%,
+      var(--ifm-background-color) 100%);
   position: relative;
 }
 
@@ -24,6 +24,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -31,9 +32,9 @@
 }
 
 .videoPlaceholder {
-  background: linear-gradient(135deg, 
-    rgba(37, 99, 235, 0.05) 0%, 
-    rgba(139, 92, 246, 0.05) 100%);
+  background: linear-gradient(135deg,
+      rgba(37, 99, 235, 0.05) 0%,
+      rgba(139, 92, 246, 0.05) 100%);
   border-radius: 1.5rem;
   padding: 3rem;
   text-align: center;
@@ -55,6 +56,7 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -68,13 +70,11 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 20px,
-    rgba(37, 99, 235, 0.02) 20px,
-    rgba(37, 99, 235, 0.02) 40px
-  );
+  background: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 20px,
+      rgba(37, 99, 235, 0.02) 20px,
+      rgba(37, 99, 235, 0.02) 40px);
   animation: slide 20s linear infinite;
   pointer-events: none;
 }
@@ -83,6 +83,7 @@
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(40px, 40px);
   }
@@ -119,13 +120,97 @@
   .whatYoullBuildSection {
     padding: 3rem 0;
   }
-  
+
   .whatYoullBuildSection h2 {
     font-size: 2rem;
   }
-  
+
   .videoPlaceholder {
     padding: 2rem;
     min-height: 300px;
+  }
+}
+
+/* Build Cards - Premium Styling */
+.buildCard {
+  background: linear-gradient(135deg,
+      rgba(99, 102, 241, 0.1) 0%,
+      rgba(6, 182, 212, 0.08) 100%);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: scaleIn 0.6s ease-out backwards;
+}
+
+.buildCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.buildCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.buildCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.buildCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.buildCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.buildCard:hover::before {
+  left: 100%;
+}
+
+.buildCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.buildIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.buildCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.buildCard p {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .buildCard {
+    margin-bottom: 1rem;
   }
 }
